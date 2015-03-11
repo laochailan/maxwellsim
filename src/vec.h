@@ -1,6 +1,12 @@
 #ifndef VEC_H
 #define VEC_H
 
-typedef double Vec[2];
+typedef struct {
+	double x;
+	double y;
+} Vec;
+
+double min(double x, double y);
+double max(double x, double y);
 
 #endif

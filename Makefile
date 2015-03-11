@@ -1,12 +1,14 @@
 CC = clang
 TARGET = maxwellsim
-CFLAGS= -g -O3 -Isrc -Wall `sdl2-config --cflags`
-LFLAGS = -lm `sdl2-config --libs`
+CFLAGS= -g -O3 -Isrc -Wall `sdl2-config --cflags` `libpng-config --cflags`
+LFLAGS = -lm `sdl2-config --libs` `libpng-config --libs`
 
 SRCS = \
-	  src/wire.c \
+	  src/model.c \
 	  src/gfx.c \
-	  src/main.c
+	  src/main.c \
+	  src/vec.c \
+	  src/loadmap.c
 
 OBJECTS = $(notdir $(SRCS:.c=.o))
 
@@ -16,9 +18,6 @@ all:	$(TARGET)
 
 %.o: src/%.c
 	$(CC) -o $@ -c $< $(CFLAGS)
-
-#wire.o: src/wire.c
-#	$(CC) -o wire.o -c src/wire.c $(CFLAGS)
 
 $(TARGET): $(OBJECTS)
 	$(CC) -o $(TARGET) $(OBJECTS) $(CFLAGS) $(LFLAGS)

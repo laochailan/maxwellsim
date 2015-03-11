@@ -1,12 +1,12 @@
 #ifndef CONSTANTS_H
 #define CONSTANTS_H
 
-#define EPS0 8.854187817620e-12 // F/m
+//#define C 3e10 // cm/s
+#define C 6e1
 
-#define EPSILON_CONV 1e-3
-#define WIRE_AREA 0.0001 // m^2 
-enum {
-	POTENTIAL_MAX_ITER = 10000,
-};
+#define EPSILON_CONV 1e-9
+
+#define DX 0.5
+#define DY 0.5
 
 #endif
