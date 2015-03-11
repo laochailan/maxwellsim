@@ -235,12 +235,6 @@ void model_update(Model *m, double dt) {
 		}
 	}
 
-	if(t < 1000) {
-		m->phi[0][132*m->w+40] = 0.7*cos(2*M_PI*t/100.);
-		m->phi[1][132*m->w+40] = 0.7*cos(2*M_PI*t/100.);
-		m->phi[2][132*m->w+40] = 0.7*cos(2*M_PI*t/100.);
-	}
-	
 	t++;
 
 	m->tp = (m->tp+1)%3;
